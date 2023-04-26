@@ -5,13 +5,19 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
+const linkStyling = {
+  textDecoration: "none"
+};
+
 function Header() {
   return (
     <div className="header">
-      <div className="header__logo">
-        <StorefrontIcon className="header__logoImage" fontSize="large" />
-        <h2 className="header__logoTitle">eShop</h2>
-      </div>
+      <Link to="/" style={linkStyling}>
+        <div className="header__logo">
+          <StorefrontIcon className="header__logoImage" fontSize="large" />
+          <h2 className="header__logoTitle">eShop</h2>
+        </div>
+      </Link>
 
       <div className="header__search">
         <input type="Text" className="header__searchInput" />
@@ -31,10 +37,12 @@ function Header() {
         {/* <Link to = "./4Checkout_Comps/Checkout">
         
         </Link> */}
-        <div className="nav__itemBasket">
-          <ShoppingBasketIcon fontSize="large" />
-          <span className="nav__itemLineTwo nav__basketCount">0</span>
-        </div>
+        <Link to="/checkout" style={linkStyling}>
+          <div className="nav__itemBasket">
+            <ShoppingBasketIcon fontSize="large" />
+            <span className="nav__itemLineTwo nav__basketCount">0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

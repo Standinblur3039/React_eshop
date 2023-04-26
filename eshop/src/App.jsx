@@ -8,8 +8,13 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Home />
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/checkout" element={<Checkout />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
