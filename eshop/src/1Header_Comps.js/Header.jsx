@@ -34,9 +34,7 @@ function Header() {
           <span className="nav__itemLineOne">Your</span>
           <span className="nav__itemLineTwo">Shop</span>
         </div>
-        {/* <Link to = "./4Checkout_Comps/Checkout">
         
-        </Link> */}
         <Link to="/checkout" style={linkStyling}>
           <div className="nav__itemBasket">
             <ShoppingBasketIcon fontSize="large" />

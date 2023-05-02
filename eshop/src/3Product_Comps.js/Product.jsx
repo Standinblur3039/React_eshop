@@ -15,15 +15,15 @@ function Product({id,title,price,rating,image}) {
                 {/* // using curly brackets to use js obect in html , Array( rating ) = creats a array , .fill() method fills the array , .map(_,i) means (_) means each and every item of array and (i) means integer of the array these two have to be filled with paragram <p>star ⭐</p>  */}
                   {Array(rating) 
                   .fill()
-                  .map((_,i)=>(                      //can also be written without the (_,i)
-                    <p>⭐</p> // win + ; to use emojis 
+                  .map((i)=>(                      //can also be written without the (_,i)
+                    <p key={i}>⭐</p> // win + ; to use emojis 
                   ))} 
                   
                 
                 </div>
 
             </div>
-            <img src={image} />
+            <img src={image} alt='random' />
             <button>Add to Basket</button>
 
 
