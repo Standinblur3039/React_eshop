@@ -4,12 +4,14 @@ import StorefrontIcon from "@mui/icons-material/Storefront";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 
 const linkStyling = {
   textDecoration: "none"
 };
 
 function Header() {
+  const[{basket},dispatch] = useStateValue();
   return (
     <div className="header">
       <Link to="/" style={linkStyling}>
@@ -38,7 +40,7 @@ function Header() {
         <Link to="/checkout" style={linkStyling}>
           <div className="nav__itemBasket">
             <ShoppingBasketIcon fontSize="large" />
-            <span className="nav__itemLineTwo nav__basketCount">0</span>
+            <span className="nav__itemLineTwo nav__basketCount">{basket.length}</span>
           </div>
         </Link>
       </div>
